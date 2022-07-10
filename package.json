@@ -25,6 +25,7 @@
     "@types/testing-library__jest-dom": "^5.14.5",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "maplibre-gl": "^2.1.9",
-    "solid-js": "^1.4.2"
+    "solid-js": "^1.4.2",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }
