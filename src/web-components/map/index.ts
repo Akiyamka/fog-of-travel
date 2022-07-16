@@ -1,9 +1,9 @@
-import maplibre, { CustomLayerInterface, GeoJSONSource } from 'maplibre-gl';
+import maplibre, { CustomLayerInterface } from 'maplibre-gl';
 import { MapboxLayer } from '@deck.gl/mapbox';
 import type { BaseMapInterface, Listener, Layer, FitBoundsOptions, bbox, MapEvent } from './types';
 import { Marker } from './marker';
 import { wrapInWebComponent } from '../_utils';
-
+import { Layer as DeckLayer } from 'deck.gl';
 interface Options {
   container?: HTMLDivElement,
   accessToken: string,
@@ -180,7 +180,7 @@ export class MapGL implements BaseMapInterface {
     map.removeFeatureState({ source, id });
   }
 
-  async addDeckGlLayer(type, customLayer: CustomLayerInterface) {
+  async addDeckGlLayer(type: typeof DeckLayer, customLayer: CustomLayerInterface) {
     const mapGlLayer = new MapboxLayer({
       ...customLayer,
       type,

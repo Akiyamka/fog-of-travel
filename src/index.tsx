@@ -28,16 +28,16 @@ map.addDeckGlLayer(H3HexagonLayer, {
    * ]
    */
   // data: [],
+  // @ts-expect-error MapGl custom layers have too strict type
   data: 'https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/sf.h3cells.json',
   pickable: true,
   wireframe: false,
   filled: true,
   extruded: true,
   elevationScale: 20,
-  getHexagon: (d) => d.hex,
-  getFillColor: (d) => [255, (1 - d.count / 500) * 255, 0],
-  getElevation: (d) => d.count,
+  getHexagon: (d: { hex: string }) => d.hex,
+  getFillColor: (d: { count: number}) => [255, (1 - d.count / 500) * 255, 0],
+  getElevation: (d: { count: number }) => d.count,
 });
-
 
 render(() => <MainPage />, document.getElementById('root')!);
