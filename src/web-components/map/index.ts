@@ -1,5 +1,6 @@
+import maplibre, { CustomLayerInterface, GeoJSONSource } from 'maplibre-gl';
+import { MapboxLayer } from '@deck.gl/mapbox';
 import type { BaseMapInterface, Listener, Layer, FitBoundsOptions, bbox, MapEvent } from './types';
-import maplibre, { GeoJSONSource } from 'maplibre-gl';
 import { Marker } from './marker';
 import { wrapInWebComponent } from '../_utils';
 
@@ -171,11 +172,22 @@ export class MapGL implements BaseMapInterface {
   async setFeatureState({ source, id }: { source: string, id: string }, state: Record<string, unknown>) {
     const map = await this._getMap();
     map.setFeatureState({ source, id }, state);
+    map.addLayer
   }
 
   async removeFeatureState({ source, id }: { source: string, id: string }) {
     const map = await this._getMap();
     map.removeFeatureState({ source, id });
+  }
+
+  async addDeckGlLayer(type, customLayer: CustomLayerInterface) {
+    const mapGlLayer = new MapboxLayer({
+      ...customLayer,
+      type,
+    });
+    const map = await this._getMap();
+    console.log(mapGlLayer)
+    map.addLayer(mapGlLayer);
   }
 }
 
