@@ -30,9 +30,11 @@
     "@deck.gl/layers": "^8.8.3",
     "@deck.gl/mapbox": "^8.8.3",
     "@deck.gl/mesh-layers": "^8.8.3",
+    "@supabase/supabase-js": "^1.35.4",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "babel-preset-solid": "^1.4.6",
+    "h3-js": "^3.7.2",
     "maplibre-gl": "^2.1.9",
     "solid-js": "^1.4.7",
     "typescript-plugin-css-modules": "^3.4.0"

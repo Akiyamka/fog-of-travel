@@ -186,8 +186,8 @@ export class MapGL implements BaseMapInterface {
       type,
     });
     const map = await this._getMap();
-    console.log(mapGlLayer)
     map.addLayer(mapGlLayer);
+    return mapGlLayer;
   }
 }
 
