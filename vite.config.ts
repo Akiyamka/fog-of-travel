@@ -2,7 +2,10 @@
 /// <reference types="vite/client" />
 
 import { defineConfig } from 'vite';
+import path from 'path';
 import solidPlugin from 'vite-plugin-solid';
+
+const projectRootDir = path.resolve(__dirname);
 
 export default defineConfig({
   plugins: [solidPlugin()],
@@ -28,5 +31,9 @@ export default defineConfig({
   },
   resolve: {
     conditions: ['development', 'browser'],
+    alias: {
+      '~entities': path.resolve(projectRootDir, 'src/entities'),
+      '~services': path.resolve(projectRootDir, 'src/services'),
+    }
   }
 });

@@ -1,5 +1,5 @@
-import { Cell } from 'entities/cell';
-import { User } from 'entities/user';
+import { Cell } from '~entities/cell';
+import { User } from '~entities/user';
 
 class Api {
   constructor() {

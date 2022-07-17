@@ -1,10 +1,10 @@
-import { locator } from 'services/locator';
-import { api } from 'services/api';
+import { locator } from '~services/locator';
+import { api } from '~services/api';
 import { H3Area } from './area';
 import { H3Layer } from './h3-layer';
 import type { Point } from './point';
 
-export class DiscoveredAreaLayer {
+export class DiscoveredArea {
   #layer;
   #currentArea: H3Area = new H3Area(7);
 

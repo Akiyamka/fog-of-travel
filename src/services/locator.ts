@@ -1,4 +1,4 @@
-import { Point } from 'entities/point';
+import { Point } from '~entities/point';
 
 class EventsBroadcaster {
   #listeners = new Set<(arg: any) => void>();

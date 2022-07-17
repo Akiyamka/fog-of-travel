@@ -1,7 +1,7 @@
 import MapboxLayer from '@deck.gl/mapbox/mapbox-layer';
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
-import { map } from 'services/map';
-import { H3Area } from 'entities/area';
+import { map } from '~services/map';
+import { H3Area } from '~entities/area';
 
 interface H3LayerSettings {
   readonly id: string;
