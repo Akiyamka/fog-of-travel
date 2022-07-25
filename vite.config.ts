@@ -34,6 +34,7 @@ export default defineConfig({
     alias: {
       '~entities': path.resolve(projectRootDir, 'src/entities'),
       '~services': path.resolve(projectRootDir, 'src/services'),
+      '~components': path.resolve(projectRootDir, 'src/components'),
     }
   }
 });

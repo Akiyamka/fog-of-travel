@@ -16,7 +16,8 @@
     "isolatedModules": true,
     "paths": {
       "~entities/*": ["entities/*"],
-      "~services/*": ["services/*"]
+      "~services/*": ["services/*"],
+      "~components/*": ["components/*"]
     }
   },
   "include": ["index.d.ts", "./src/**/*.d.ts", "./src/**/*.ts", "./src/**/*.tsx", "setupVitest.ts"],
