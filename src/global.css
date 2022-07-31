@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #root {
@@ -9,4 +10,38 @@ html, body {
 
 .maplibregl-map {
   height: 100%;
+}
+
+:root {
+  --unit: 8px;
+  --z-index-modal: 1;
+  --border-radius: 4px;
+  --text-color: gray;
+  --shade: rgba(237, 242, 247, .8);
+  --accent: rgb(121, 242, 255);
+}
+
+/* Forms */
+input {
+  border: none;
+  background-color: rgba(237, 242, 247, .7);
+  padding: var(--unit);
+  border-radius: var(--border-radius);
+}
+
+button {
+  padding: var(--unit);
+  cursor: pointer;
+  background-color: var(--accent);
+  border: none;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #00899e;
+  border-bottom: 2px solid #00cde3;
+}
+
+button:hover {
+  background-color: rgb(131, 234, 245)
 }

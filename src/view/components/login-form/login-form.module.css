@@ -1,0 +1,18 @@
+.modalTitle {
+  margin-bottom: calc(var(--unit) * 2);
+}
+
+.flexColumn {
+  display: flex;
+  flex-flow: column;
+  gap: var(--unit);
+}
+
+.errorMessage {
+  color: red;
+  font-size: .8em;
+}
+
+.errorMessage:empty {
+  display: none;
+}

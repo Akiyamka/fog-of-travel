@@ -1,5 +1,5 @@
 import config from '../../app-config';
-import { MapGL } from '../web-components/map';
+import { MapGL } from '../view/web-components/map';
 
 export const map = new MapGL({
   accessToken: config.MAP_TOKEN,

@@ -1,0 +1,30 @@
+.splashScreen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--shade);
+  z-index: var(--z-index-modal);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.modalWindow {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  padding: calc(var(--unit) * 5);
+  background-color: white;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  border-bottom: 2px solid #ececec;
+  box-shadow:
+    0px 4.5px 3.7px rgba(0, 0, 0, 0.024),
+    0px 12.5px 10.4px rgba(0, 0, 0, 0.035),
+    0px 30.1px 26.5px rgba(0, 0, 0, 0.046),
+    0px 100px 80px rgba(0, 0, 0, 0.07)
+}
+
+
+.modalWindow button {
+  margin-top: var(--unit)
+}

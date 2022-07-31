@@ -1,4 +1,4 @@
-import { Point } from '~entities/point';
+import { Point } from 'entities/point';
 
 class EventsBroadcaster {
   #listeners = new Set<(arg: any) => void>();
@@ -14,11 +14,15 @@ class EventsBroadcaster {
 
 class Locator extends EventsBroadcaster {
   currentPosition: Point | null = null;
-  id: number;
+  id: number | null = null;
   lastUpdate: number | null = null;
 
   constructor() {
     super();
+  }
+
+  runWatcher() {
+    if (this.id) navigator.geolocation.clearWatch(this.id);
     this.id = navigator.geolocation.watchPosition(
       ({ coords, timestamp }) => {
         this.lastUpdate = timestamp;

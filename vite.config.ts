@@ -4,11 +4,19 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import solidPlugin from 'vite-plugin-solid';
+import fs from 'fs';
 
 const projectRootDir = path.resolve(__dirname);
+const tsLikeAutoAliases = fs.readdirSync(
+  path.resolve(__dirname, 'src'), { withFileTypes: true }
+).filter(d => d.isDirectory()).reduce((aliases, e) => {
+  aliases[e.name] = path.resolve(projectRootDir, 'src', e.name)
+  return aliases
+}, {});
 
 export default defineConfig({
   plugins: [solidPlugin()],
+  clearScreen: false,
   test: {
     environment: 'jsdom',
     globals: true,
@@ -31,10 +39,7 @@ export default defineConfig({
   },
   resolve: {
     conditions: ['development', 'browser'],
-    alias: {
-      '~entities': path.resolve(projectRootDir, 'src/entities'),
-      '~services': path.resolve(projectRootDir, 'src/services'),
-      '~components': path.resolve(projectRootDir, 'src/components'),
-    }
+    alias: tsLikeAutoAliases
   }
 });
+
